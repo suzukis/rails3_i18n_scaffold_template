@@ -1,0 +1,26 @@
+<%%= form_for(@<%= singular_table_name %>) do |f| %>
+  <%% if @<%= singular_table_name %>.errors.any? %>
+    <div id="error_explanation">
+      <%% object_name = ActiveModel::Naming.singular(@<%= singular_table_name %>)
+         object_name = I18n.t(object_name, :default => object_name, :scope => [:activerecord, :models], :count => 1) %>
+      <h2><%%= I18n.t :header, :count => @<%= singular_table_name %>.errors.count, :model => object_name , :scope => [:activerecord, :errors, :template], :default => "#{pluralize(@<%= singular_table_name %>.errors.count, "error")} prohibited this {{model}} from being saved:" %></h2>
+
+
+      <ul>
+      <%% @<%= singular_table_name %>.errors.full_messages.each do |msg| %>
+        <li><%%= msg %></li>
+      <%% end %>
+      </ul>
+    </div>
+  <%% end %>
+
+<% for attribute in attributes -%>
+  <div class="field">
+    <%%= f.label :<%= attribute.name %> %><br />
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+  </div>
+<% end -%>
+  <div class="actions">
+    <%%= f.submit %>
+  </div>
+<%% end %>

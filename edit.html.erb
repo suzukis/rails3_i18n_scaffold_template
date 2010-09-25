@@ -1,0 +1,7 @@
+<h1>Editing <%= singular_table_name %></h1>
+<h1><%% translate(:editing, :default => "Editing {{model}}", :model => <%= class_name %>.human_name, :scope => [:railties, :scaffold]) %></h1>
+
+<%%= render 'form' %>
+
+<%%= link_to translate(:show, :default => 'Show', :scope => [:railties, :scaffold]), @<%= singular_table_name %> %> |
+<%%= link_to translate(:back, :default => 'Back', :scope => [:railties, :scaffold]), <%= index_helper %>_path %>

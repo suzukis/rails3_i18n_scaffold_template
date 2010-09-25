@@ -1,0 +1,5 @@
+<h1><%%= translate(:new, :default => "New {{model}}", :model => <%= class_name %>.human_name, :scope => [:railties, :scaffold]) %></h1>
+
+<%%= render 'form' %>
+
+<%%= link_to translate(:back, :default => 'Back', :scope => [:railties, :scaffold]), <%= index_helper %>_path %>

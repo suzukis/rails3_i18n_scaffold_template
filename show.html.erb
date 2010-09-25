@@ -1,0 +1,12 @@
+<p id="notice"><%%= notice %></p>
+
+<% for attribute in attributes -%>
+<p>
+  <b><%%= <%= class_name %>.human_attribute_name('<%= attribute.name %>') %>:</b>
+  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+</p>
+
+<% end -%>
+
+<%%= link_to translate(:edit, :default => 'Edit', :scope => [:railties, :scaffold]), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %> |
+<%%= link_to translate(:back, :default => 'Back', :scope => [:railties, :scaffold]), <%= index_helper %>_path %>
