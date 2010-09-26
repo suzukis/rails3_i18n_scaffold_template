@@ -3,7 +3,7 @@
     <div id="error_explanation">
       <%% object_name = ActiveModel::Naming.singular(@<%= singular_table_name %>)
          object_name = I18n.t(object_name, :default => object_name, :scope => [:activerecord, :models], :count => 1) %>
-      <h2><%%= I18n.t :header, :count => @<%= singular_table_name %>.errors.count, :model => object_name , :scope => [:activerecord, :errors, :template], :default => "#{pluralize(@<%= singular_table_name %>.errors.count, "error")} prohibited this {{model}} from being saved:" %></h2>
+      <h2><%%= I18n.t :header, :count => @<%= singular_table_name %>.errors.count, :model => object_name , :scope => [:activerecord, :errors, :template], :default => "#{pluralize(@<%= singular_table_name %>.errors.count, "error")} prohibited this %{model} from being saved:" %></h2>
 
 
       <ul>

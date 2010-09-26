@@ -1,5 +1,5 @@
 <h1>Editing <%= singular_table_name %></h1>
-<h1><%% translate(:editing, :default => "Editing {{model}}", :model => <%= class_name %>.human_name, :scope => [:railties, :scaffold]) %></h1>
+<h1><%% translate(:editing, :default => "Editing %{model}", :model => <%= class_name %>.model_name.human, :scope => [:railties, :scaffold]) %></h1>
 
 <%%= render 'form' %>
 

@@ -1,4 +1,4 @@
-<h1><%%= translate(:new, :default => "New {{model}}", :model => <%= class_name %>.human_name, :scope => [:railties, :scaffold]) %></h1>
+<h1><%%= translate(:new, :default => "New %{model}", :model => <%= class_name %>.model_name.human, :scope => [:railties, :scaffold]) %></h1>
 
 <%%= render 'form' %>
 
