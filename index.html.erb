@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-<% for attribute in attributes -%>
+<% attributes.each do |attribute| -%>
     <th><%%= <%= class_name %>.human_attribute_name('<%= attribute.name %>') %></th>
 <% end -%>
     <th></th>
@@ -12,7 +12,7 @@
 
 <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
   <tr>
-<% for attribute in attributes -%>
+<% attributes.each do |attribute| -%>
     <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>
     <td><%%= link_to translate(:show, :default => 'Show', :scope => [:railties, :scaffold]), <%= singular_table_name %> %></td>

@@ -5,7 +5,6 @@
          object_name = I18n.t(object_name, :default => object_name, :scope => [:activerecord, :models], :count => 1) %>
       <h2><%%= I18n.t :header, :count => @<%= singular_table_name %>.errors.count, :model => object_name , :scope => [:activerecord, :errors, :template], :default => "#{pluralize(@<%= singular_table_name %>.errors.count, "error")} prohibited this %{model} from being saved:" %></h2>
 
-
       <ul>
       <%% @<%= singular_table_name %>.errors.full_messages.each do |msg| %>
         <li><%%= msg %></li>
@@ -14,7 +13,7 @@
     </div>
   <%% end %>
 
-<% for attribute in attributes -%>
+<% attributes.each do |attribute| -%>
   <div class="field">
     <%%= f.label :<%= attribute.name %> %><br />
     <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
